@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Pendaftaran Akun Klub - ASKAB PSSI MENTAWAI</title>
     <style>
-        /* CSS Mobile-First dan Diperkuat untuk Keterlihatan Penuh */
+        
         :root {
-            --primary-color: #004c99; /* Biru tua PSSI */
-            --secondary-color: #f7b000; /* Kuning PSSI untuk aksen */
+            --primary-color: #004c99; 
+            --secondary-color: #f7b000;
             --background-color: #f4f7f6;
             --card-background: #ffffff;
             --border-radius: 12px;
@@ -24,7 +24,6 @@
         }
 
         body, html {
-            /* Memastikan body dan html mengambil tinggi penuh dan bisa discroll */
             height: 100%;
             font-family: var(--font-family);
             background-color: var(--background-color);
@@ -32,7 +31,6 @@
             color: #333;
         }
 
-        /* CONTAINER UTAMA - Membatasi Lebar Maksimum */
         .main-wrapper {
             max-width: 450px; 
             margin: 0 auto;
@@ -41,7 +39,6 @@
             padding-bottom: 20px; 
         }
 
-        /* HEADER SECTION (Kepala Halaman) */
         .header-container {
             display: flex;
             justify-content: space-between;
@@ -49,7 +46,7 @@
             padding: 15px;
             border-bottom: 3px solid var(--primary-color);
             background-color: var(--card-background);
-            position: sticky; /* Jaga Header tetap terlihat saat scroll */
+            position: sticky; 
             top: 0;
             z-index: 10;
         }
@@ -176,7 +173,7 @@
                 
                 <div class="form-group">
                     <label for="namaAdmin">Nama Lengkap Admin <span style="color: red;">*</span></label>
-                    <input type="text" id="namaAdmin" required placeholder="Cth: Budi Santoso">
+                    <input type="text" id="namaAdmin" required placeholder="Cth: Rinaldi Kaslan">
                 </div>
 
                 <div class="form-group">
@@ -191,12 +188,12 @@
 
                 <div class="form-group">
                     <label for="julukan">Julukan Klub (Opsional)</label>
-                    <input type="text" id="julukan" placeholder="Cth: Laskar Ombak">
+                    <input type="text" id="julukan" placeholder="Cth: sikerei muda">
                 </div>
 
                 <div class="form-group">
                     <label for="alamatKlub">Alamat Klub <span style="color: red;">*</span></label>
-                    <input type="text" id="alamatKlub" required placeholder="Cth: Jl. Raya Sikakap No. 12">
+                    <input type="text" id="alamatKlub" required placeholder="Cth: Jl. Raya Tuapejat Km.8 Desa Sipora Jaya Kecamatan Sipora Utara">
                 </div>
 
                 <button type="submit" class="submit-button">
@@ -242,13 +239,13 @@ Kepada Yth. Admin ASKAB PSSI MENTAWAI,
 Kami dari manajemen klub mengajukan pendaftaran akun klub baru melalui formulir digital. Berikut adalah detail data yang kami sampaikan:
 
 *I. DATA ADMINISTRATOR (PIC)*
-* Nama Lengkap: ${namaAdmin}
-* Nomor WhatsApp: ${noWa}
+* Nama Lengkap:* ${namaAdmin}*
+* Nomor WhatsApp:* ${noWa}*
 
 *II. DATA KLUB*
-* Nama Resmi Klub: ${namaKlub}
-* Julukan Klub: ${julukan}
-* Alamat Domisili Klub: ${alamatKlub}
+* Nama Resmi Klub:* ${namaKlub}*
+* Julukan Klub:* ${julukan}*
+* Alamat Domisili Klub:* ${alamatKlub}*
 
 ____________________________
 Mohon kiranya data ini dapat segera diproses lebih lanjut.
