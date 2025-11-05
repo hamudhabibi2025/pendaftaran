@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Pendaftaran Akun Klub - ASKAB PSSI MENTAWAI</title>
+    <style>
+        /* CSS Mobile-First dan Diperkuat untuk Keterlihatan Penuh */
+        :root {
+            --primary-color: #004c99; /* Biru tua PSSI */
+            --secondary-color: #f7b000; /* Kuning PSSI untuk aksen */
+            --background-color: #f4f7f6;
+            --card-background: #ffffff;
+            --border-radius: 12px;
+            --font-family: 'Poppins', sans-serif;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body, html {
+            /* Memastikan body dan html mengambil tinggi penuh dan bisa discroll */
+            height: 100%;
+            font-family: var(--font-family);
+            background-color: var(--background-color);
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* CONTAINER UTAMA - Membatasi Lebar Maksimum */
+        .main-wrapper {
+            max-width: 450px; 
+            margin: 0 auto;
+            background-color: var(--card-background);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding-bottom: 20px; 
+        }
+
+        /* HEADER SECTION (Kepala Halaman) */
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 3px solid var(--primary-color);
+            background-color: var(--card-background);
+            position: sticky; /* Jaga Header tetap terlihat saat scroll */
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            height: 40px; 
+            width: auto;
+            object-fit: contain;
+        }
+
+        .title-group {
+            text-align: center;
+            flex-grow: 1;
+            padding: 0 5px;
+        }
+
+        .org-name {
+            font-size: 1.2rem; 
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 2px;
+            line-height: 1.2;
+        }
+
+        .form-title {
+            font-size: 0.9rem;
+            color: #555;
+            font-weight: 600;
+        }
+        
+        /* FORM CARD */
+        .form-card {
+            padding: 25px 15px 10px 15px;
+        }
+
+        /* FORM ELEMENTS (Kolom Input) */
+        .form-group {
+            margin-bottom: 25px; /* Jarak antar kolom diperbesar */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 0.95rem;
+        }
+
+        input[type="text"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            min-height: 44px; 
+            transition: all 0.3s ease;
+            -webkit-appearance: none; 
+            appearance: none;
+        }
+
+        input:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(247, 176, 0, 0.3);
+            outline: none;
+        }
+
+        /* BUTTON STYLE (Tombol Kirimkan) */
+        .submit-button {
+            width: 100%;
+            padding: 15px;
+            background-color: #25D366; /* Hijau WhatsApp */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 15px; 
+        }
+
+        .submit-button:hover {
+            background-color: #128C7E;
+        }
+
+        .whatsapp-icon {
+            font-size: 1.3rem;
+        }
+
+        /* Tampilan Desktop */
+        @media (min-width: 451px) {
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                min-height: 100vh;
+                padding-top: 50px; 
+                background-color: #e0e0e0; 
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="main-wrapper"> 
+        <div class="header-container">
+            <img src="https://ibb.co.com/7wWMWXr" alt="Logo ASKAB PSSI MENTAWAI" class="logo" id="logo-askab">
+
+            <div class="title-group">
+                <h1 class="org-name">ASKAB PSSI MENTAWAI</h1>
+                <h2 class="form-title">Pendaftaran Akun Klub</h2>
+            </div>
+
+            <img src="https://ibb.co.com/VYMZK9dr" alt="Logo PSSI" class="logo" id="logo-pssi">
+        </div>
+
+        <div class="form-card">
+            <form id="registrationForm">
+                
+                <div class="form-group">
+                    <label for="namaAdmin">Nama Lengkap Admin <span style="color: red;">*</span></label>
+                    <input type="text" id="namaAdmin" required placeholder="Cth: Budi Santoso">
+                </div>
+
+                <div class="form-group">
+                    <label for="noWa">Nomor WhatsApp Admin (Hanya Angka) <span style="color: red;">*</span></label>
+                    <input type="tel" id="noWa" required pattern="[0-9]+" placeholder="Cth: 081234567890">
+                </div>
+
+                <div class="form-group">
+                    <label for="namaKlub">Nama Klub <span style="color: red;">*</span></label>
+                    <input type="text" id="namaKlub" required placeholder="Cth: Mentawai United FC">
+                </div>
+
+                <div class="form-group">
+                    <label for="julukan">Julukan Klub (Opsional)</label>
+                    <input type="text" id="julukan" placeholder="Cth: Laskar Ombak">
+                </div>
+
+                <div class="form-group">
+                    <label for="alamatKlub">Alamat Klub <span style="color: red;">*</span></label>
+                    <input type="text" id="alamatKlub" required placeholder="Cth: Jl. Raya Sikakap No. 12">
+                </div>
+
+                <button type="submit" class="submit-button">
+                    <i class="fab fa-whatsapp whatsapp-icon"></i>
+                    Kirimkan Data Pendaftaran
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript untuk memvalidasi form dan membuat tautan WhatsApp profesional
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            const targetWa = "6285266610522"; // Nomor WA Admin
+
+            // Ambil data
+            const namaAdmin = document.getElementById('namaAdmin').value.trim();
+            const noWa = document.getElementById('noWa').value.trim();
+            const namaKlub = document.getElementById('namaKlub').value.trim();
+            const julukan = document.getElementById('julukan').value.trim() || 'Tidak Ada'; 
+            const alamatKlub = document.getElementById('alamatKlub').value.trim();
+
+            // Validasi
+            if (!namaAdmin || !noWa || !namaKlub || !alamatKlub) {
+                alert("⚠️ Pendaftaran Gagal. Mohon lengkapi semua kolom yang bertanda * (wajib)!");
+                return;
+            }
+
+            if (!/^[0-9]+$/.test(noWa)) {
+                alert("⚠️ Pendaftaran Gagal. Nomor WhatsApp Admin harus berupa angka.");
+                return;
+            }
+
+            // Pesan WhatsApp Profesional
+            const message = 
+`*PEMBERITAHUAN PENDAFTARAN AKUN KLUB BARU*
+____________________________
+
+Kepada Yth. Admin ASKAB PSSI MENTAWAI,
+
+Kami dari manajemen klub mengajukan pendaftaran akun klub baru melalui formulir digital. Berikut adalah detail data yang kami sampaikan:
+
+*I. DATA ADMINISTRATOR (PIC)*
+* Nama Lengkap: ${namaAdmin}
+* Nomor WhatsApp: ${noWa}
+
+*II. DATA KLUB*
+* Nama Resmi Klub: ${namaKlub}
+* Julukan Klub: ${julukan}
+* Alamat Domisili Klub: ${alamatKlub}
+
+____________________________
+Mohon kiranya data ini dapat segera diproses lebih lanjut.
+
+Terima kasih atas perhatian dan kerjasamanya.`;
+            
+            const encodedMessage = encodeURIComponent(message);
+            const waLink = `https://wa.me/${targetWa}?text=${encodedMessage}`;
+
+            // Arahkan ke WhatsApp
+            window.open(waLink, '_blank');
+        });
+        
+        // Membatasi input Nomor WA hanya angka
+        document.getElementById('noWa').addEventListener('input', function(e) {
+            e.target.value = e.target.value.replace(/[^0-9]/g, '');
+        });
+        
+    </script>
+</body>
+</html>
