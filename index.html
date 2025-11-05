@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Pendaftaran Akun Klub - ASKAB PSSI MENTAWAI</title>
     <style>
-        
+        /* CSS Mobile-First dan Diperkuat */
         :root {
             --primary-color: #004c99; 
-            --secondary-color: #f7b000;
+            --secondary-color: #f7b000; 
             --background-color: #f4f7f6;
             --card-background: #ffffff;
             --border-radius: 12px;
@@ -39,6 +39,7 @@
             padding-bottom: 20px; 
         }
 
+        /* HEADER SECTION (Kepala Halaman) - POSISI STICKY */
         .header-container {
             display: flex;
             justify-content: space-between;
@@ -84,7 +85,7 @@
 
         /* FORM ELEMENTS (Kolom Input) */
         .form-group {
-            margin-bottom: 25px; /* Jarak antar kolom diperbesar */
+            margin-bottom: 25px; 
         }
 
         label {
@@ -96,7 +97,9 @@
         }
 
         input[type="text"],
-        input[type="tel"] {
+        input[type="tel"],
+        /* Tambahkan TEXTAREA untuk styling yang sama */
+        textarea { 
             width: 100%;
             padding: 12px;
             border: 1px solid #ddd;
@@ -106,9 +109,15 @@
             transition: all 0.3s ease;
             -webkit-appearance: none; 
             appearance: none;
+            resize: vertical; /* Izinkan user merubah tinggi vertikal jika perlu */
+        }
+        
+        /* Tinggi Khusus untuk Kolom Alamat Klub (TEXTAREA) */
+        #alamatKlub {
+            min-height: 88px; /* Ditingkatkan menjadi dua kali lipat (44px * 2) */
         }
 
-        input:focus {
+        input:focus, textarea:focus {
             border-color: var(--secondary-color);
             box-shadow: 0 0 0 3px rgba(247, 176, 0, 0.3);
             outline: none;
@@ -118,7 +127,7 @@
         .submit-button {
             width: 100%;
             padding: 15px;
-            background-color: #25D366; /* Hijau WhatsApp */
+            background-color: #25D366; 
             color: white;
             border: none;
             border-radius: 8px;
@@ -173,27 +182,27 @@
                 
                 <div class="form-group">
                     <label for="namaAdmin">Nama Lengkap Admin <span style="color: red;">*</span></label>
-                    <input type="text" id="namaAdmin" required placeholder="Cth: Rinaldi Kaslan">
+                    <input type="text" id="namaAdmin" required placeholder="Cth: Rinaldi Kaslan" value="">
                 </div>
 
                 <div class="form-group">
                     <label for="noWa">Nomor WhatsApp Admin (Hanya Angka) <span style="color: red;">*</span></label>
-                    <input type="tel" id="noWa" required pattern="[0-9]+" placeholder="Cth: 081234567890">
+                    <input type="tel" id="noWa" required pattern="[0-9]+" placeholder="Cth: 081234567890" value="">
                 </div>
 
                 <div class="form-group">
                     <label for="namaKlub">Nama Klub <span style="color: red;">*</span></label>
-                    <input type="text" id="namaKlub" required placeholder="Cth: Mentawai United FC">
+                    <input type="text" id="namaKlub" required placeholder="Cth: Mentawai United FC" value="">
                 </div>
 
                 <div class="form-group">
                     <label for="julukan">Julukan Klub (Opsional)</label>
-                    <input type="text" id="julukan" placeholder="Cth: sikerei muda">
+                    <input type="text" id="julukan" placeholder="Cth: sikerei muda" value="">
                 </div>
 
                 <div class="form-group">
                     <label for="alamatKlub">Alamat Klub <span style="color: red;">*</span></label>
-                    <input type="text" id="alamatKlub" required placeholder="Cth: Jl. Raya Tuapejat Km.8 Desa Sipora Jaya Kecamatan Sipora Utara">
+                    <textarea id="alamatKlub" required placeholder="Cth: Jl. Raya Tuapejat Km.8 Desa Sipora Jaya Kecamatan Sipora Utara"></textarea>
                 </div>
 
                 <button type="submit" class="submit-button">
@@ -216,7 +225,8 @@
             const noWa = document.getElementById('noWa').value.trim();
             const namaKlub = document.getElementById('namaKlub').value.trim();
             const julukan = document.getElementById('julukan').value.trim() || 'Tidak Ada'; 
-            const alamatKlub = document.getElementById('alamatKlub').value.trim();
+            // Ambil data dari TEXTAREA
+            const alamatKlub = document.getElementById('alamatKlub').value.trim(); 
 
             // Validasi
             if (!namaAdmin || !noWa || !namaKlub || !alamatKlub) {
@@ -239,13 +249,13 @@ Kepada Yth. Admin ASKAB PSSI MENTAWAI,
 Kami dari manajemen klub mengajukan pendaftaran akun klub baru melalui formulir digital. Berikut adalah detail data yang kami sampaikan:
 
 *I. DATA ADMINISTRATOR (PIC)*
-* Nama Lengkap:* ${namaAdmin}*
-* Nomor WhatsApp:* ${noWa}*
+* Nama Lengkap: ${namaAdmin}
+* Nomor WhatsApp: ${noWa}
 
 *II. DATA KLUB*
-* Nama Resmi Klub:* ${namaKlub}*
-* Julukan Klub:* ${julukan}*
-* Alamat Domisili Klub:* ${alamatKlub}*
+* Nama Resmi Klub: ${namaKlub}
+* Julukan Klub: ${julukan}
+* Alamat Domisili Klub: ${alamatKlub}
 
 ____________________________
 Mohon kiranya data ini dapat segera diproses lebih lanjut.
