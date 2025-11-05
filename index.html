@@ -207,7 +207,7 @@
 
                 <button type="submit" class="submit-button">
                     <i class="fab fa-whatsapp whatsapp-icon"></i>
-                    Kirimkan Data Pendaftaran
+                    Kirimkan Data Ke Admin ASKAB
                 </button>
             </form>
         </div>
@@ -241,25 +241,24 @@
 
             // Pesan WhatsApp Profesional
             const message = 
-`*PEMBERITAHUAN PENDAFTARAN AKUN KLUB BARU*
+`*PERMOHONAN PENDAFTARAN AKUN KLUB BARU SEPAKBOLA*
 ____________________________
 
 Kepada Yth. Admin ASKAB PSSI MENTAWAI,
 
-Kami dari manajemen klub mengajukan pendaftaran akun klub baru melalui formulir digital. Berikut adalah detail data yang kami sampaikan:
+Kami dari manajemen klub Mengajukan Pendaftaran Akun Klub baru melalui formulir digital. Berikut adalah detail data yang kami sampaikan:
 
 *I. DATA ADMINISTRATOR (PIC)*
-* Nama Lengkap: ${namaAdmin}
-* Nomor WhatsApp: ${noWa}
+* Nama Lengkap: $*{namaAdmin}*
+* Nomor WhatsApp: $*{noWa}*
 
 *II. DATA KLUB*
-* Nama Resmi Klub: ${namaKlub}
-* Julukan Klub: ${julukan}
-* Alamat Domisili Klub: ${alamatKlub}
+* Nama Resmi Klub: $*{namaKlub}*
+* Julukan Klub: $*{julukan}*
+* Alamat Domisili Klub: $*{alamatKlub}*
 
 ____________________________
 Mohon kiranya data ini dapat segera diproses lebih lanjut.
-
 Terima kasih atas perhatian dan kerjasamanya.`;
             
             const encodedMessage = encodeURIComponent(message);
